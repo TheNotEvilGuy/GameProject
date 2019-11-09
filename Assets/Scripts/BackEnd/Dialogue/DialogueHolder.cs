@@ -11,6 +11,7 @@ public class DialogueHolder : MonoBehaviour {
 
 	private DialogueManager dialogueManager; 
     private bool dialogueActive = false;
+    private bool playerTouching = false;
     private bool isTyping = false;
     private bool cancelTyping = false;
     private int currentLine = 0;
@@ -29,27 +30,40 @@ public class DialogueHolder : MonoBehaviour {
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E) && playerTouching)
+            EnableDialogue();
+
         if (dialogueActive == true && Input.GetKeyDown(KeyCode.Space))
+            OnDialogue();
+    }
+
+    private void EnableDialogue()
+    {
+        dialogueActive = true;
+        dialogueManager.ShowDialogue();
+        StartCoroutine(TextScroll(dialogueLines[currentLine]));
+    }
+
+    private void OnDialogue()
+    {
+        if (currentLine < dialogueLines.Length - 1 && !isTyping) //Displays the next line
         {
-            if (currentLine < dialogueLines.Length - 1 && !isTyping) //Displays the next line
+            currentLine++;
+            StartCoroutine(TextScroll(dialogueLines[currentLine]));
+        }
+        else if (currentLine == dialogueLines.Length - 1 && !isTyping) //Finishes displaying dialogue and hides the dialogue box and etc.
+        {
+            if (loadScene)
             {
-                currentLine++;
-                StartCoroutine(TextScroll(dialogueLines[currentLine]));
+                SceneManager.LoadScene(sceneName);
             }
-            else if (currentLine == dialogueLines.Length - 1 && !isTyping) //Finishes displaying dialogue and hides the dialogue box and etc.
-            {
-                if (loadScene) 
-                {
-                    SceneManager.LoadScene(sceneName);
-                }
-                currentLine = 0;
-                dialogueActive = false; 
-                dialogueManager.DialogueOff();
-            }
-            else if (isTyping && !cancelTyping) //Skips the typing
-            {
-                cancelTyping = true;
-            }
+            currentLine = 0;
+            dialogueActive = false;
+            dialogueManager.DialogueOff();
+        }
+        else if (isTyping && !cancelTyping) //Skips the typing
+        {
+            cancelTyping = true;
         }
     }
 
@@ -73,15 +87,13 @@ public class DialogueHolder : MonoBehaviour {
     }
 
     private void OnTriggerStay2D (Collider2D other) {
-
         if (other.CompareTag("Player"))
-        { // If the player and this object touch.
-            if (Input.GetKeyDown(KeyCode.E))
-            { // If the player presses E on this object.
-                dialogueActive = true;
-                dialogueManager.ShowDialogue();
-                StartCoroutine(TextScroll(dialogueLines[currentLine]));
-            }
-        }
+            playerTouching = true; 
 	}
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            playerTouching = false;
+    }
 }
