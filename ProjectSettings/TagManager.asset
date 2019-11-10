@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PickableItems
+    uniqueID: 840288701
+    locked: 0
+  - name: Entities
+    uniqueID: 3853190385
+    locked: 0

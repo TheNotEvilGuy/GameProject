@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7886920848576451682}
   - component: {fileID: 7886920848576451683}
   - component: {fileID: 8692241467258016749}
+  - component: {fileID: -1432804971286070193}
+  - component: {fileID: -2773724513857147534}
   m_Layer: 0
   m_Name: Chort
   m_TagString: Player
@@ -70,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -441776911
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3779b64fb1164b24a3c4d4b9714f9bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,5 +159,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdeec8e19422d41679da3a7fde909275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1432804971286070193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886920848576451686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8080fd10362e71b458404e5065732453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2773724513857147534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886920848576451686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255e573f5d2d0834caf6bfcb5da48226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

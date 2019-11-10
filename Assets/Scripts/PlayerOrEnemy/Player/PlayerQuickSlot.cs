@@ -33,13 +33,10 @@ public class PlayerQuickSlot : MonoBehaviour
         int j = 0;
         foreach (KeyValuePair<GameObject, int> i in value)
         {
-            print("i.Key = " + i.Key + " and item = " + item + " AT INDEX: " + j.ToString());
             if (i.Key.GetComponent<PickableItem>().itemName == item.GetComponent<PickableItem>().itemName)
             {
-                print("index " + j.ToString() + ": " + quickSlot[j]);
                 quickSlot[j] = new KeyValuePair<GameObject, int>(item, i.Value + amount);
-                print("index " + j.ToString() + ": " + quickSlot[j]);
-                //Destroy(i.Key);
+                Destroy(i.Key);
                 return true;
             }
             j++;
