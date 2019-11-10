@@ -24,8 +24,9 @@ public class PlayerCamera : MonoBehaviour
             Vector3 dir = (Input.mousePosition - sp).normalized;
             Vector2 n = Vector2.Lerp(transform.position, dir, smoothTime);
             Vector3 edit = Vector3.SmoothDamp(transform.position, new Vector3(player.transform.position.x + n.x, player.transform.position.y + n.y, transform.position.z), ref velocity, smoothTime * Time.deltaTime);
-            Vector3 roundPos = new Vector3(RoundToNearestPixel(edit.x, GetComponent<Camera>()), RoundToNearestPixel(edit.y, GetComponent<Camera>()), transform.position.z);
-            transform.position = new Vector3(roundPos.x, roundPos.y, transform.position.z);
+            //Vector3 roundPos = new Vector3(RoundToNearestPixel(edit.x, GetComponent<Camera>()), RoundToNearestPixel(edit.y, GetComponent<Camera>()), transform.position.z);
+            //transform.position = new Vector3(roundPos.x, roundPos.y, transform.position.z);
+            transform.position = new Vector3(edit.x, edit.y, transform.position.z);
         }
     }
 
