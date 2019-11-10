@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    private SaveData saveData;
     private GameObject player;
 
 	public GameObject dBox;

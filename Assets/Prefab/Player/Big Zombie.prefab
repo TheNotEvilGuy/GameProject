@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5569967844902528902}
   - component: {fileID: 5569967844902528901}
   - component: {fileID: 7736081109181764112}
+  - component: {fileID: 2548917079859420832}
+  - component: {fileID: 1940770929938731185}
   m_Layer: 0
   m_Name: Big Zombie
   m_TagString: Player
@@ -157,5 +159,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdeec8e19422d41679da3a7fde909275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2548917079859420832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569967844902528898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8080fd10362e71b458404e5065732453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: {fileID: 5569967844902528898}
+  testAgain: {fileID: 7886920848576451686, guid: 67821835a2874419c9fae7fdabf019ec,
+    type: 3}
+  andAgain: {fileID: 5237421375418151254, guid: 83d13a342d88d405ba6fe4aa6871d604,
+    type: 3}
+  last: {fileID: 393106167836399116, guid: ae2a9c03dba9845dcbafb7b8fd0d3797, type: 3}
+--- !u!114 &1940770929938731185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569967844902528898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255e573f5d2d0834caf6bfcb5da48226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
