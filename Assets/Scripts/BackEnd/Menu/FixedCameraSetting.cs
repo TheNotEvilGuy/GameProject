@@ -6,18 +6,12 @@ using UnityEngine;
 public class FixedCameraSetting : MonoBehaviour
 {
     // Initializes the Fixed Camera Text to the appropriate setting
-    private SaveData saveData;
 
-    private void OnEnable()
+    private void Awake()
     {
-        saveData = FindObjectOfType<SaveData>();
-
-        if (saveData)
-        {
-            if (saveData.fixedCamera)
-                GetComponent<TextMeshProUGUI>().text = "ON";
-            else
-                GetComponent<TextMeshProUGUI>().text = "OFF";
-        }
+        if (0 != PlayerPrefs.GetInt("fixedCamera", 0))
+            GetComponent<TextMeshProUGUI>().text = "ON";
+        else
+            GetComponent<TextMeshProUGUI>().text = "OFF";  
     }
 }

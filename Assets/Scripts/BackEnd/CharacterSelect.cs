@@ -5,8 +5,7 @@ using UnityEngine;
 public class CharacterSelect : MonoBehaviour
 {
     private SaveData saveData;
-    public GameObject[] character;
-
+   
     private void OnEnable()
     {
         saveData = FindObjectOfType<SaveData>();
@@ -14,6 +13,6 @@ public class CharacterSelect : MonoBehaviour
 
     public void characterSelect(int index)
     {
-        saveData.SetPlayer(character[index]);
+        PlayerPrefs.SetInt("characterModel", index);
     }
 }
