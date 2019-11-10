@@ -5,17 +5,15 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     private GameObject player;
-    private SaveData saveData;
     private Vector3 velocity = Vector3.zero;
+    private bool fixedCamera = false;
 
     public float moveSpeed = 5f;
     public float smoothTime = 35f;
-    [HideInInspector]
-    public bool fixedCamera = false;
-
+    
     private void OnEnable()
     {
-        saveData = FindObjectOfType<SaveData>();
+        fixedCamera = 0 != PlayerPrefs.GetInt("fixedCamera", 0);
     }
 
     private void FixedUpdate()
@@ -33,7 +31,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        fixedCamera = saveData.fixedCamera;
+        fixedCamera = 0 != PlayerPrefs.GetInt("fixedCamera", 0);
         if (player && fixedCamera)
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);

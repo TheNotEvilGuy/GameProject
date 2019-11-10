@@ -298,5 +298,6 @@
 "Assets/Scripts/BackEnd/Menu/Menu.cs"
 "Assets/Scripts/BackEnd/SaveData.cs"
 "Assets/Scripts/BackEnd/SceneLoader.cs"
-"Assets/Scripts/PlayerOrEnemy/PlayerCamera.cs"
-"Assets/Scripts/PlayerOrEnemy/PlayerMovement.cs"
+"Assets/Scripts/PlayerOrEnemy/Player/PlayerCamera.cs"
+"Assets/Scripts/PlayerOrEnemy/Player/PlayerMovement.cs"
+"Assets/Scripts/PlayerOrEnemy/Player/PlayerStats.cs"

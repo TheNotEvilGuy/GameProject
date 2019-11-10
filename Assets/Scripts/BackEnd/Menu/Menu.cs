@@ -8,12 +8,10 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private GameObject menu;
     private PlayerCamera playerCamera;
-    private SaveData saveData;
 
     private void OnEnable()
     {
         playerCamera = FindObjectOfType<PlayerCamera>();
-        saveData = FindObjectOfType<SaveData>();
     }
 
     private void Update()
@@ -68,20 +66,17 @@ public class Menu : MonoBehaviour
 
     public void FixedCamera(TextMeshProUGUI myText)
     {
-        if (saveData)
+        if (0 != PlayerPrefs.GetInt("fixedCamera", 0))
         {
-            if (saveData.fixedCamera)
-            {
-                saveData.fixedCamera = false;
-                if (myText)
-                    myText.text = "OFF";
-            }
-            else
-            {
-                saveData.fixedCamera = true;
-                if (myText)
-                    myText.text = "ON";
-            }
+            PlayerPrefs.SetInt("fixedCamera", 0);
+            if (myText)
+                myText.text = "OFF";
+        }
+        else
+        {
+            PlayerPrefs.SetInt("fixedCamera", 1);
+            if (myText)
+                myText.text = "ON";
         }
     }
 }

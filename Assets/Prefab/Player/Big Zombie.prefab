@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5569967844902528903}
   - component: {fileID: 5569967844902528902}
   - component: {fileID: 5569967844902528901}
+  - component: {fileID: 7736081109181764112}
   m_Layer: 0
   m_Name: Big Zombie
   m_TagString: Player
@@ -146,3 +147,15 @@ MonoBehaviour:
   saveData: {fileID: 0}
   myBody: {fileID: 0}
   canMove: 1
+--- !u!114 &7736081109181764112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569967844902528898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdeec8e19422d41679da3a7fde909275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
