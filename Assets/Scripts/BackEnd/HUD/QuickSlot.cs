@@ -19,24 +19,31 @@ public class QuickSlot : MonoBehaviour
         playerQ = player.GetComponent<PlayerQuickSlot>();
     }
 
-    private void LateUpdate()
-    {
-        if (playerQ)
-            UpdateQuickSlot();
-    }
-
-    private void UpdateQuickSlot()
+    public void UpdateQuickSlot() //Updates QuickSlot UI in-game
     {
         for (int i = 0; i < transform.childCount; i++)
         {
             KeyValuePair<GameObject, int> temp = playerQ.GetItemAndAmount(i);
             if (!temp.Key)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
                 break;
+            }
 
-            transform.GetChild(i).GetComponent<Image>().sprite = temp.Key.GetComponent<SpriteRenderer>().sprite;
-            transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = temp.Value.ToString();
-            transform.GetChild(i).gameObject.SetActive(true);
+            Transform child = transform.GetChild(i);
+            child.GetComponent<Image>().sprite = temp.Key.GetComponent<SpriteRenderer>().sprite;
+            child.GetChild(0).GetComponent<TextMeshProUGUI>().text = temp.Value.ToString();
+            child.GetComponent<Slot>().SetItemName(temp.Key.GetComponent<PickableItem>().itemName);
+            child.GetComponent<Slot>().SetAmount(temp.Value);
+            child.gameObject.SetActive(true);
         }
+    }
+
+    public void Remove(int slotIndex)
+    {
+        Transform child = transform.GetChild(slotIndex);
+        if(playerQ.Remove(child.GetComponent<Slot>().GetItemName(), 1))
+            UpdateQuickSlot();
     }
 
     public void SetPlayer(GameObject thePlayer)
