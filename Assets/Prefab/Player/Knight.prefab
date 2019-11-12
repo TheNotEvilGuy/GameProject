@@ -16,12 +16,14 @@ GameObject:
   - component: {fileID: -4327199648166264197}
   - component: {fileID: 8951509132347046222}
   - component: {fileID: -2589119789828344031}
+  - component: {fileID: 28632350}
+  - component: {fileID: 273126936457924262}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &393106167836399118
 Transform:
@@ -185,3 +187,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255e573f5d2d0834caf6bfcb5da48226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &28632350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393106167836399116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadc1223648466345bbc6910a9130d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 273126936457924262}
+--- !u!95 &273126936457924262
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393106167836399116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ce8bd99f4f51d94f94eb7c6d232ac4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

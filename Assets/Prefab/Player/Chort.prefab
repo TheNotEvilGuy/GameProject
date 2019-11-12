@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 8692241467258016749}
   - component: {fileID: -1432804971286070193}
   - component: {fileID: -2773724513857147534}
+  - component: {fileID: 5503700096935955295}
+  - component: {fileID: 8683138215671254125}
   m_Layer: 0
   m_Name: Chort
   m_TagString: Player
@@ -185,3 +187,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255e573f5d2d0834caf6bfcb5da48226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5503700096935955295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886920848576451686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadc1223648466345bbc6910a9130d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 8683138215671254125}
+--- !u!95 &8683138215671254125
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886920848576451686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3b08f07dcf6f4e478047a78f7e96b7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
