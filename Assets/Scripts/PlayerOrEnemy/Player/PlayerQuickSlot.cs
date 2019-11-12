@@ -1,34 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
+/*
+ * This script is attached to the player
+ */
 
 public class PlayerQuickSlot : MonoBehaviour
 {
     private OrderedDictionary quickSlot;
-    private const int MAXSLOTS = 9;
+    private const int MAXCAPACITY = 9;
 
     private void Awake()
     {
         quickSlot = new OrderedDictionary();
-        
     }
 
-    private void Diagnose() //For debugging
-    {
-        print("--------------------------------");
-        ICollection value = quickSlot.Values;
-        int j = 0;
-        foreach (KeyValuePair<GameObject, int> i in value)
-        {
-            print(j + ": " + i.Key);
-            j++;
-        }
-        print(" COUNT: " + quickSlot.Count);
-    }
-
+    /*
+     * Returns an item from the Ordereddict and the amount of it
+     * int index - where the item is located
+     */
     public KeyValuePair<GameObject, int> GetItemAndAmount(int index)
     {
         if (quickSlot.Count - 1 >= index) //Check for out of range
@@ -39,7 +31,13 @@ public class PlayerQuickSlot : MonoBehaviour
         return new KeyValuePair<GameObject, int>(null, 0);
     }
 
-    public bool Add(GameObject item, int amount)
+    /*
+     * Add items into the Ordereddictionary
+     * GameObject item - the item you want to add 
+     * int amount - the amount of items you want added
+     * Returns true if the item is successfully added
+     */
+    public bool Add(GameObject item, int amount) 
     {
         ICollection value = quickSlot.Values;
         int j = 0;
@@ -53,7 +51,7 @@ public class PlayerQuickSlot : MonoBehaviour
             }
             j++;
         }
-        if (quickSlot.Count < MAXSLOTS)
+        if (quickSlot.Count < MAXCAPACITY)
         {
             KeyValuePair<GameObject, int> itemAndAmount = new KeyValuePair<GameObject, int>(item, amount);
             quickSlot.Add(item.GetComponent<PickableItem>().itemName, itemAndAmount);
@@ -62,7 +60,13 @@ public class PlayerQuickSlot : MonoBehaviour
         return false;
     }
 
-    public bool Remove(string item, int amount)
+    /*
+    * Remove items from the Ordereddictionary
+    * string item - The name of the item you want to remove
+    * int amount - the amount of items you want removed.
+    * Returns true if an item is successfully removed
+    */
+    public bool Remove(string item, int amount) 
     {
         ICollection value = quickSlot.Values;
         int j = 0;

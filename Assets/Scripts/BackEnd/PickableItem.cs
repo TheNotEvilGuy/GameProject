@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour
 {
-    private PlayerQuickSlot playerQ;
-    private QuickSlot quickSlot;
+    private PlayerInventory playerQ;
+    private MainInventory mainInventory;
 
     public string itemName = "Unknown";
     public int amountToGive = 0;
 
     private void Start()
     {
-        playerQ = FindObjectOfType<PlayerQuickSlot>();
-        quickSlot = FindObjectOfType<QuickSlot>();
+        playerQ = FindObjectOfType<PlayerInventory>();
+        mainInventory = FindObjectOfType<MainInventory>();
     }
 
+    //Detects when an item is "picked up" by the player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && playerQ)
@@ -24,7 +25,7 @@ public class PickableItem : MonoBehaviour
             Destroy(copy.GetComponent<BoxCollider2D>());
             if (playerQ.Add(copy, amountToGive))
             {
-                quickSlot.UpdateQuickSlot();
+                mainInventory.UpdateInventory();
                 Destroy(this.gameObject);
             }
             else

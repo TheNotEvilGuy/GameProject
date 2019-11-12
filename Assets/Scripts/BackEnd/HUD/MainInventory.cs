@@ -4,33 +4,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-/*
- * This script should be attached to an empty gameObject with children
- * containing Image components
- */
-
-public class QuickSlot : MonoBehaviour
+public class MainInventory : MonoBehaviour
 {
-    private PlayerQuickSlot playerQ;
+    private PlayerInventory playerI;
     private GameObject player;
 
     private void Start()
     {
-        playerQ = player.GetComponent<PlayerQuickSlot>();
+        playerI = player.GetComponent<PlayerInventory>();
     }
 
-    public void UpdateQuickSlot() //Updates QuickSlot UI in-game
+    public void UpdateInventory() //Updates QuickSlot UI in-game
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.GetChild(0).childCount; i++)
         {
-            KeyValuePair<GameObject, int> temp = playerQ.GetItemAndAmount(i);
+            KeyValuePair<GameObject, int> temp = playerI.GetItemAndAmount(i);
             if (!temp.Key)
             {
-                transform.GetChild(i).gameObject.SetActive(false);
+                transform.GetChild(0).GetChild(i).gameObject.SetActive(false);
                 break;
             }
 
-            Transform child = transform.GetChild(i);
+            Transform child = transform.GetChild(0).GetChild(i);
             child.GetComponent<Image>().sprite = temp.Key.GetComponent<SpriteRenderer>().sprite;
             child.GetChild(0).GetComponent<TextMeshProUGUI>().text = temp.Value.ToString();
             child.GetComponent<Slot>().SetItemName(temp.Key.GetComponent<PickableItem>().itemName);
@@ -42,9 +37,9 @@ public class QuickSlot : MonoBehaviour
     //Removes an item
     public void Remove(int slotIndex)
     {
-        Transform child = transform.GetChild(slotIndex);
-        if(playerQ.Remove(child.GetComponent<Slot>().GetItemName(), 1))
-            UpdateQuickSlot();
+        Transform child = transform.GetChild(0).GetChild(slotIndex);
+        if (playerI.Remove(child.GetComponent<Slot>().GetItemName(), 1))
+            UpdateInventory();
     }
 
     public void SetPlayer(GameObject thePlayer)

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script is attached to each "slots" in the UI
+ */
+
 public class Slot : MonoBehaviour
 {
     private string itemName = "Unknown";

@@ -8,6 +8,7 @@ public class Initializer : MonoBehaviour
     private PlayerCamera playerCamera;
     private DialogueManager dialogueManager;
     private QuickSlot quickSlot;
+    private MainInventory mainInventory;
     private GameObject player;
 
     private void Awake()
@@ -23,6 +24,7 @@ public class Initializer : MonoBehaviour
         playerCamera = FindObjectOfType<PlayerCamera>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         quickSlot = FindObjectOfType<QuickSlot>();
+        mainInventory = FindObjectOfType<MainInventory>();
     }
 
     private void CreatePlayer()
@@ -39,5 +41,7 @@ public class Initializer : MonoBehaviour
             dialogueManager.SetPlayer(player);
         if (quickSlot)
             quickSlot.SetPlayer(player);
+        if (mainInventory)
+            mainInventory.SetPlayer(player);
     }
 }

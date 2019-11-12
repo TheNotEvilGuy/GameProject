@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\BackEnd\CharacterSelect.cs" />
     <Compile Include="Assets\Scripts\BackEnd\Dialogue\DialogueHolder.cs" />
     <Compile Include="Assets\Scripts\BackEnd\Dialogue\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\BackEnd\HUD\InventoryMenu.cs" />
+    <Compile Include="Assets\Scripts\BackEnd\HUD\MainInventory.cs" />
     <Compile Include="Assets\Scripts\BackEnd\HUD\QuickSlot.cs" />
     <Compile Include="Assets\Scripts\BackEnd\HUD\Slot.cs" />
     <Compile Include="Assets\Scripts\BackEnd\Initializer.cs" />
