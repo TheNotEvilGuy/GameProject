@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 59a926f3ce33bee4697f5ecf3438e6c8
+guid: aa1385cd2f00a8843879b1559db86e9e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8030619408320259967
+    second: full plant_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -132,7 +135,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: full plant_0
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 226
+        width: 51
+        height: 49
+      alignment: 9
+      pivot: {x: 0.42362466, y: 0.08027805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fca2634d303fd4ab5664405c61fcc0
+      internalID: -8030619408320259967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

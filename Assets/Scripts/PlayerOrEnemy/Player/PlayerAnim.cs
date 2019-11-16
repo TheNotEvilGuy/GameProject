@@ -19,7 +19,7 @@ public class PlayerAnim : MonoBehaviour
                 anim.SetBool("idle", true);
             else
                 anim.SetBool("idle", false);
-            
+
             anim.SetFloat("horChange", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
             anim.SetFloat("verChange", Input.GetAxisRaw("Vertical"));
         }

@@ -10,7 +10,8 @@ using UnityEngine;
 public class PlayerQuickSlot : MonoBehaviour
 {
     private OrderedDictionary quickSlot;
-    private const int MAXCAPACITY = 9;
+    [SerializeField]
+    private const int MAXCAPACITY = 4;
 
     private void Awake()
     {
