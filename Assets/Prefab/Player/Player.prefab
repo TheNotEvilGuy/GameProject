@@ -356,13 +356,13 @@ GameObject:
   - component: {fileID: 6187579069248239760}
   - component: {fileID: 6187579069248239761}
   - component: {fileID: 6187579069248239763}
-  - component: {fileID: 6187579069248239762}
   - component: {fileID: 6187579069248239773}
   - component: {fileID: 6187579069248239775}
   - component: {fileID: 6187579069248239774}
   - component: {fileID: 6187579069248239772}
   - component: {fileID: -6266586763556126475}
   - component: {fileID: 1978267414}
+  - component: {fileID: 4079545032697662528}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -458,40 +458,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &6187579069248239762
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6187579069248239766}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.96}
-    newSize: {x: 0.96, y: 0.96}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.11, y: 0.32}
-      - {x: -0.13, y: 0.32}
-      - {x: -0.17, y: 0.28}
-      - {x: -0.17999999, y: 0.17}
-      - {x: -0.17999999, y: -0.14999999}
-      - {x: -0.12, y: -0.32}
-      - {x: 0.13, y: -0.32}
-      - {x: 0.17999999, y: -0.14999999}
-      - {x: 0.17999999, y: 0.29999998}
 --- !u!114 &6187579069248239773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16d468ed3bc82348a31b35a0fdc456b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 75
+  speed: 150
   saveData: {fileID: 0}
   myBody: {fileID: 0}
   canMove: 1
@@ -576,3 +542,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &4079545032697662528
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187579069248239766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.296875, y: 0.46875}
+      - {x: 0.109375, y: 0.53125}
+      - {x: -0.171875, y: 0.53125}
+      - {x: -0.234375, y: 0.421875}
+      - {x: -0.3125, y: 0.21875}
+      - {x: -0.3125, y: -0.234375}
+      - {x: -0.1875, y: -0.53125}
+      - {x: 0.234375, y: -0.53125}
+      - {x: 0.3125, y: -0.140625}
+      - {x: 0.3125, y: 0.40625}
