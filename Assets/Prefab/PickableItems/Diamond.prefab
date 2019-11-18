@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3816732334281960655}
   - component: {fileID: 3816732334281960648}
-  - component: {fileID: 3816732334281960654}
   - component: {fileID: 3816732334281960653}
+  - component: {fileID: 6120156052131588459}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -83,7 +83,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3816732334281960654
+--- !u!114 &3816732334281960653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816732334281960649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bee632d23ff3124abb7109c56e79552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Diamond
+  amountToGive: 1
+--- !u!61 &6120156052131588459
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,26 +114,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.28, y: 0.23}
+    oldSize: {x: 0.875, y: 0.71875}
     newSize: {x: 0.28, y: 0.23}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28, y: 0.23}
+  m_Size: {x: 0.875, y: 0.71875}
   m_EdgeRadius: 0
---- !u!114 &3816732334281960653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3816732334281960649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bee632d23ff3124abb7109c56e79552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Diamond
-  amountToGive: 1
